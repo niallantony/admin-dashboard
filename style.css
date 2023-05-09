@@ -1,0 +1,152 @@
+:root {
+    --darkgrey: #353535;
+    --bluegreen: #3C6E71;
+    --white: #FFF;
+    --grey: #D9D9D9;
+    --blue: #284B63;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    height:100svh;
+    display:grid;
+    grid-template-columns: [sidebar-start logo-start] 2fr
+                            [sidebar-end search-start action-start workspace-start logo-end] 5fr
+                            [workspace-end rightbar-start] 3fr [rightbar-end search-end action-end] ;
+    grid-template-rows: [logo-start search-start] 3rem
+                        [search-end action-start logo-end sidebar-start] 4.5rem
+                        [action-end workspace-start rightbar-start] 1fr [sidebar-end workspace-end rightbar-end];
+                        background-color: var(--blue);
+}
+
+.sidebar {
+    grid-area: sidebar-start / sidebar-start / sidebar-end / sidebar-end;
+    background-color: var(--blue);
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+    padding: 1rem;
+}
+
+.logo {
+    align-self: center;
+    background-color: var(--blue);
+}
+
+.pages,
+.tools {
+    display:flex;
+    flex-direction: column;
+}
+
+.sidebar-option {
+    margin: 0.5rem;
+}
+
+.search {
+    grid-area: search-start / search-start / search-end / search-end;
+    background-color: var(--bluegreen);
+    display:flex;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 0.5rem;
+}
+
+.search button {
+    height: 2rem;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.search input {
+    height: 2rem;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid black;
+    flex: 1;
+}
+
+
+
+.action {
+    grid-area: action-start / action-start / action-end / action-end;
+    background-color: var(--bluegreen);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.action button {
+    height: 2rem;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.greeting {
+    flex:1;
+    position:relative;
+}
+
+.greeting::before {
+    content:"Hi there,";
+    font-size: .7em;
+    position:absolute;
+    top: -1em;
+}
+
+.workspace {
+    grid-area: workspace-start / workspace-start / workspace-end / workspace-end;
+    background-color: var(--grey);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    grid-template-rows: [title-start] 2rem [title-end];
+    gap: 1rem;
+    grid-auto-rows: 150px;
+    padding: 1rem;
+}
+
+.workspace .title {
+    align-self: end;
+    grid-row: title-start / title-end;
+    grid-column: 1 / -1;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 5px;
+    border-left: 5px solid var(--bluegreen);
+    box-shadow: 5px 5px 5px -4px gray;
+}
+
+.rightbar {
+    grid-area: rightbar-start / rightbar-start / rightbar-end / rightbar-end;
+    background-color: var(--grey);
+    display: grid;
+    grid-template-rows: 2rem 1fr 2rem 1fr;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.rightbar .title {
+    align-self: end;
+}
+
+.announcements {
+    background-color: var(--white);
+    border-radius: 5px;
+    border-left: 5px solid var(--bluegreen);
+    box-shadow: 5px 5px 5px -4px gray;
+}
+
+.trending {
+    background-color: var(--white);
+    border-radius: 5px;
+    border-left: 5px solid var(--bluegreen);
+    box-shadow: 5px 5px 5px -4px gray;
+}
