@@ -1,6 +1,6 @@
 :root {
     --darkgrey: #353535;
-    --bluegreen: #f6c150;
+    --bluegreen: #f6ae2d;
     --white: #FFF;
     --grey: #E9E9E9;
     --blue: #6696b6;
@@ -131,6 +131,9 @@ button.account {
     flex: 1;
     min-width: 1rem;
     background-color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 1rem;
 }
 
 .avatar {
